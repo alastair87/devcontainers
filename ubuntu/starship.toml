@@ -1,0 +1,28 @@
+add_newline = false
+command_timeout = 10000
+
+[character]
+error_symbol = "[◈](bold red)"
+success_symbol = "[◈](bold green)"
+vicmd_symbol = "[◈](bold yellow)"
+
+[username]
+format = '[$user]($style) @ '
+style_user = 'bold blue'
+
+[hostname]
+format = '[$hostname]($style) '
+
+[cmd_duration]
+format = '[$duration]($style)'
+min_time = 60_000
+style = 'bold yellow'
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch) ]($style)'
+
+[docker_context]
+format = '[$symbol$context]($style) '
+
+[container]
+disabled = true
