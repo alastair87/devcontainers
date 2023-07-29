@@ -1,4 +1,4 @@
-FROM docker.io/alastair87/ubuntu:latest
+FROM docker.io/alastair87/debian:latest
 LABEL maintainer="Alastair Cooper <alastair@alastair87.me>"
 ARG VERSION="lts"
 ARG USER="user"
