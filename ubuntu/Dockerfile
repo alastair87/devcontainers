@@ -4,9 +4,9 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y zsh git bat exa fzf direnv curl wget sudo tini && \
     apt-get autoclean
-RUN wget -O /tmp/install.sh https://starship.rs/install.sh && \
-    sh /tmp/install.sh -y && \
-    rm /tmp/install.sh
+RUN wget -O /tmp/starship.tar.gz https://github.com/starship/starship/releases/latest/download/starship-$(uname -m)-unknown-linux-musl.tar.gz && \
+    tar xvf /tmp/starship.tar.gz -C /usr/local/bin && \
+    rm /tmp/starship.tar.gz
 COPY key-bindings.zsh /usr/share/doc/fzf/examples/key-bindings.zsh
 ARG USER="user"
 RUN adduser --shell /bin/zsh ${USER}
