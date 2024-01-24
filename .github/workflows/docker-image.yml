@@ -15,5 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      # run: docker build debian --file Dockerfile --tag alastair87/debian:$(date +%s)
-      run: ls -la
+      run: docker build debian --file Dockerfile --tag alastair87/debian:$(date +%s)
