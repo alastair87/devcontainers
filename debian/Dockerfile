@@ -9,6 +9,7 @@ RUN ln -s /usr/bin/batcat /usr/bin/bat && \
 RUN wget -O /tmp/install.sh https://starship.rs/install.sh && \
     sh /tmp/install.sh -y && \
     rm /tmp/install.sh
+COPY key-bindings.zsh /usr/share/doc/fzf/examples/key-bindings.zsh
 ARG USER="user"
 RUN adduser --shell /bin/zsh ${USER}
 USER ${USER}
