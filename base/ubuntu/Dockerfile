@@ -20,8 +20,9 @@ ARG USER="ubuntu"
 USER ${USER}
 WORKDIR /home/${USER}
 COPY --chown=${USER}:${USER} shared/shell/dot-zshrc /home/${USER}/.zshrc
+COPY --chown=${USER}:${USER} shared/shell/.zsh_plugins.txt /home/${USER}/.zsh_plugins.txt
 COPY --chown=${USER}:${USER} shared/shell/starship.toml /home/${USER}/.config/
-ADD --chown=${USER}:${USER} https://git.io/antigen /home/${USER}/.antigen/antigen.zsh
+RUN git clone --depth=1 https://github.com/mattmc3/antidote.git /home/${USER}/.antidote
 RUN zsh -c "source /home/${USER}/.zshrc"
 ENTRYPOINT ["tini", "-s", "--"]
 CMD [ "/bin/zsh" ]

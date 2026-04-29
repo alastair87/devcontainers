@@ -1,26 +1,5 @@
-source $HOME/.antigen/antigen.zsh
-
-antigen use oh-my-zsh
-
-antigen bundles <<EOBUNDLES
-    zsh-users/zsh-syntax-highlighting
-    zsh-users/zsh-completions
-    zsh-users/zsh-autosuggestions
-    mroth/evalcache
-    agkozak/zsh-z
-    fzf
-    git
-    gitfast
-    command-not-found
-    colored-man-pages
-    extract
-    cp
-    sudo
-    debian
-    systemadmin
-EOBUNDLES
-
-antigen apply
+source $HOME/.antidote/antidote.zsh
+antidote load $HOME/.zsh_plugins.txt
 
 _evalcache starship init zsh
 
