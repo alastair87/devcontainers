@@ -36,3 +36,20 @@ The old `ubuntu/Dockerfile` and `ubuntu/Dockerfile-2604` paths were replaced by 
 ## Quick Start
 
 See `docs/BUILD.md` for full commands.
+
+## Automated Publishing
+
+This repository includes a scheduled GitHub Actions workflow at `.github/workflows/weekly-docker-publish.yml` that builds and pushes multi-architecture images to Docker Hub.
+
+- Schedule: weekly on Sunday at 02:00 UTC.
+- Platforms: `linux/amd64` and `linux/arm64`.
+- Published tags:
+	- `alastair87/ubuntu:24.04`
+	- `alastair87/ubuntu:26.04`
+	- `alastair87/ubuntu:latest` (from the 26.04 build)
+- Manual trigger: `workflow_dispatch`.
+
+Required repository secrets:
+
+- `DOCKERHUB_USERNAME`
+- `DOCKERHUB_TOKEN`
