@@ -1,0 +1,18 @@
+# Archives and binaries
+*.tar.gz
+*.tgz
+*.zip
+*.gz
+*.bz2
+*.xz
+*.bin
+*.exe
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Local container output
+*.log
